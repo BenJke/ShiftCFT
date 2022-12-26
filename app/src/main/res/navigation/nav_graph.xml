@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/requestFragment">
+
+    <fragment
+        android:id="@+id/requestFragment"
+        android:name="ve.develop.shiftcft.fragments.RequestFragment"
+        android:label="fragment_request"
+        tools:layout="@layout/fragment_request" >
+        <action
+            android:id="@+id/show_history"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/show_detail"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="ve.develop.shiftcft.fragments.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="ve.develop.shiftcft.fragments.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="CardDetail"
+            app:argType="ve.develop.shiftcft.model.CardDetail" />
+    </fragment>
+</navigation>
